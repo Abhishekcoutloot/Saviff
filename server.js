@@ -28,7 +28,7 @@ app.use("/api/v1/auth", authRoutes);
 
 
 
-//rest api
+//rest apis
 app.get('/',(req, res) =>{
     res.send("<h1>WELCOME TO SAVIFF</h1>");
 });
