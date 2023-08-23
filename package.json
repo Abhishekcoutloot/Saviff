@@ -6,13 +6,18 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client":"npm start --prefix ./saviff",
+    "dev": "concurrently \"npm run server \" \"npm run client\""
+
   },
   "keywords": [],
   "author": "Abhishek Chaurasiya",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "concurrently": "^8.2.1",
+    "cors": "^2.8.5",
     "create-react-app": "^5.0.1",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
