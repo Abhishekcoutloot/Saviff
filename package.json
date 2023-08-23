@@ -7,9 +7,8 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client":"npm start --prefix ./saviff",
+    "client": "npm start --prefix ./saviff",
     "dev": "concurrently \"npm run server \" \"npm run client\""
-
   },
   "keywords": [],
   "author": "Abhishek Chaurasiya",
