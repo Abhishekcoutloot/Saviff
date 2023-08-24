@@ -32,7 +32,7 @@ const Login = () => {
     
         } catch (error) {
             console.log(error)
-            toast.error(error,"something went wrong")
+            toast.error("something went wrong")
     
         }
        

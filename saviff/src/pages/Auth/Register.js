@@ -41,7 +41,7 @@ const handleSubmit = async(e)=>{
 
     } catch (error) {
         console.log(error)
-        toast.error(error.message,"something went wrong")
+        toast.error("something went wrong")
 
     }
    
