@@ -27,16 +27,16 @@ app.use(express.static(path.join(__dirname,"./saviff/build")))
 
 //routes
 
-app.use("*", function(req, res){
-    res.send(path.join(__dirname,"./saviff/build/index.html"))
-});
+app.use("/api/v1/auth",authRoutes)
 
 
 
 //rest apis
-app.get('/',(req, res) =>{
-    res.send("<h1>WELCOME TO SAVIFF</h1>");
+
+app.use("*", function(req, res){
+    res.send(path.join(__dirname,"./saviff/build/index.html"))
 });
+
 
 
 //Port
