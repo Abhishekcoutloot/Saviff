@@ -5,6 +5,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoute.js"
 import cors from "cors"
 import path from "path ";
+import {fileUrlToPath} from "url";
 
 //config env
 dotenv.config();
@@ -12,6 +13,10 @@ dotenv.config();
 
 //Config Database
 connectDB()
+
+//ES6 Module fix
+const __filename = fileUrlToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 
 //rest Object
