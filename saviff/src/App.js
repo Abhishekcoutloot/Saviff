@@ -5,7 +5,6 @@ import Policy from './pages/Policy';
 import Contact from './pages/Contact';
 import Pagenotfound from './pages/Pagenotfound';
 import Register from './pages/Auth/Register.js'
-import Login from './pages/Auth/Login.js';
 
 
 
@@ -21,9 +20,7 @@ function App() {
       <Route path='/policy' element={<Policy/>}/>
       <Route path='/contact' element={<Contact/>}/>
       <Route path="*" element={<Pagenotfound/>}/>
-      <Route path="/register" element={<Register/>}/>
-      <Route path="/login" element={<Login/>}/>
-
+      <Route path="register" element={<Register/>}/>
 
     </Routes>
     </>
