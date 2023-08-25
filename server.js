@@ -4,8 +4,6 @@ import morgan from "morgan";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoute.js"
 import cors from "cors"
-import path from "path ";
-import {fileUrlToPath} from "url";
 
 //config env
 dotenv.config();
@@ -15,8 +13,8 @@ dotenv.config();
 connectDB()
 
 //ES6 Module fix
-const __filename = fileUrlToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+//const __filename = fileUrlToPath(import.meta.url);
+//const __dirname = path.dirname(__filename);
 
 
 //rest Object
@@ -26,7 +24,6 @@ const app = express();
 app.use(cors())
 app.use(express.json());
 app.use(morgan('dev'))
-app.use(express.static(path.join(__dirname,"./saviff/build")))
 
 
 
@@ -38,8 +35,8 @@ app.use("/api/v1/auth",authRoutes)
 
 //rest apis
 
-app.use("*", function(req, res){
-    res.send(path.join(__dirname,"./saviff/build/index.html"))
+app.get("/", (req, res)=>{
+    res.send("<h1>Welcome to Saviff</h1>")
 });
 
 

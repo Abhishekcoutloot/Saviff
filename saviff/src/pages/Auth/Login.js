@@ -7,13 +7,11 @@ import "../../styles/AuthStyles.css"
 
 
 
-const Register = () => {
-    const [name, setName] = useState("")
+const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [phone, setPhone] = useState("")
-    const [address, setAddress] = useState("")
-    const navigate = useNavigate()
+    const navigate= useNavigate()
+    
 
 
 
@@ -21,18 +19,17 @@ const Register = () => {
 const handleSubmit = async(e)=>{
     e.preventDefault();
     try {
-        const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`,
+        const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/login`,
         {
-            name,
+
             email,
             password,
-            phone,
-            address
+ 
         }
         );
         if(res && res.data.success){
             toast.success(res.data && res.data.message);
-            navigate("/login")
+            navigate("/")
         }else{
             toast.error(res.data.message)
         }
@@ -58,23 +55,13 @@ const handleSubmit = async(e)=>{
 
 
     return (
-        <Layout title="Register- Saviff">
+        <Layout title="Login- Saviff">
             <div className='form-container'>
  
                 <form onSubmit={handleSubmit}>
-                <h4 className="title">REGISTER FORM</h4>
+                <h4 className="title">Login</h4>
 
-                    <div className="mb-3">
-                        <input type="text" 
-                        value={name} 
-                        onChange={(e)=>setName(e.target.value)} 
-                        className="form-control" 
-                        id="exampleInputEmail1" 
-                        placeholder='Enter Your Name' 
-                        required
-                        autoFocus
-                        />
-                    </div>
+                   
 
                     <div className="mb-3">
                         <input type="email" 
@@ -98,31 +85,11 @@ const handleSubmit = async(e)=>{
                             />
                     </div>
 
-                    <div className="mb-3">
-                        <input type="text" 
-                        value={phone} 
-                        onChange={(e)=>setPhone(e.target.value)}
-                         className="form-control" 
-                         id="exampleInputEmail1" 
-                         placeholder='Enter Your Phone' 
-                         required
-                         />
-                    </div>
-
-                    <div className="mb-3">
-                        <input type="text"
-                         value={address} 
-                         onChange={(e)=>setAddress(e.target.value)} 
-                         className="form-control"
-                          id="exampleInputEmail1"
-                           placeholder='Enter Your Address' 
-                           required
-                            />
-                    </div>
+                    
 
                     <button type="submit"
                      className="btn btn-primary">
-                        REGISTER
+                        Login
                         </button>
                 </form>
 
@@ -131,4 +98,4 @@ const handleSubmit = async(e)=>{
     )
 }
 
-export default Register
+export default Login
