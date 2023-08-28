@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema({
 
     },
 
-    answer :{
+    answer:{
         type:String,
         require: true
     },

@@ -126,7 +126,7 @@ const handleSubmit = async(e)=>{
                     <div className="mb-3">
                         <input type="text"
                          value={answer} 
-                         onChange={(e)=>setAddress(e.target.value)} 
+                         onChange={(e)=>setAnswer(e.target.value)} 
                          className="form-control"
                           id="exampleInputEmail1"
                            placeholder='What is your Birth place' 
