@@ -3,6 +3,7 @@ import { comparePassword, hashPassword } from "./../helpers/authHelper.js";
 import JWT from "jsonwebtoken";
 
 export const registerController = async (req, res) => {
+  console.log("called")
   try {
     const { name, email, password, phone, address, answer } = req.body;
     //validations
